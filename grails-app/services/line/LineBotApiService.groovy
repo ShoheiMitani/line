@@ -2,7 +2,7 @@ package line
 
 import grails.transaction.Transactional
 import groovyx.net.http.HTTPBuilder
-import static groovyx.net.http.ContentType.URLENC
+import static groovyx.net.http.ContentType.JSON
 
 @Transactional
 
@@ -28,8 +28,7 @@ class LineBotApiService {
                                     toType: '1',  //Type of recipient set in the to property. (1 = user)
                                     text:text
                                   ]
-                          ],
-                 requestContentType: URLENC ) { resp,reader  ->
+                          ]) { resp,reader  ->
                  
             if (resp.status == 200) {
             }
