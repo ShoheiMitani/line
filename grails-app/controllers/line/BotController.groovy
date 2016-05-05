@@ -39,6 +39,8 @@ class BotController  extends RestfulController {
         }
         
         def reqMap = bot.getResult().get(0).get(0)
+        
+        println 'Get request from line server. Content is below...'
         println reqMap
         
         lineBotApiService.repeat(reqMap)
